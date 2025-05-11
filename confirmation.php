@@ -26,84 +26,107 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <title>Confirmation d'envoi</title>
     <link rel="stylesheet" href="style.css"/>
     <style>
-        /* Corps centré via flexbox */
+        /* Modern CSS Styling */
         body {
-            background: #f0f3f5;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
         }
-        /* Conteneur principal centré */
+
         .container {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             width: 90%;
             max-width: 600px;
-            margin-top: 40px;
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        /* En-tête et texte de récapitulatif centrés */
-        .header, .recap {
-            text-align: center;
-        }
-        .header h1 {
-            font-size: 24px;
-            margin: 0;
+            padding: 40px;
+            overflow: hidden;
             color: #333;
         }
-        .recap {
-            font-size: 16px;
-            color: #555;
-            margin-bottom: 20px;
-        }
-        /* Chaque ligne d'information est centrée grâce au text-align */
-        .info-section {
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #1e3c72;
             text-align: center;
+        }
+
+        .recap {
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #555;
+        }
+
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 10px 0;
             border-bottom: 1px solid #eee;
+            transition: background 0.3s ease;
         }
+
         .info-section:last-of-type {
             border-bottom: none;
         }
+
+        .info-section:hover {
+            background: #f7f7f7;
+        }
+
         .label {
-            width: 150px;
-            font-weight: bold;
-            color: #444;
-            text-align: right;
-            margin-right: 10px;
+            font-weight: 600;
+            color: #555;
+            flex: 1;
         }
+
         .value {
-            color: #666;
+            flex: 2;
+            text-align: right;
+            color: #333;
         }
-        /* Bouton centré */
+
         .submit-container {
             text-align: center;
             margin-top: 30px;
         }
+
         .submit-btn {
-            background: #007BFF;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: #fff;
             border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
+            border-radius: 8px;
+            padding: 12px 24px;
             font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
         }
+
         .submit-btn:hover {
-            background: #0056b3;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
-        /* Bouton afficher/cacher */
+
         #togglePassword {
-            background: transparent;
+            background: none;
             border: none;
-            color: #007BFF;
-            cursor: pointer;
+            color: #1e3c72;
             font-size: 14px;
+            text-decoration: underline;
+            cursor: pointer;
             margin-left: 10px;
+        }
+
+        #togglePassword:hover {
+            color: #2a5298;
         }
     </style>
 </head>
