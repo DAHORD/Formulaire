@@ -1,12 +1,12 @@
 <?php
-// On vérifie que le formulaire a été soumis par la méthode POST.
+// Vérifie que le formulaire a été soumis via la méthode POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Fonction de sécurisation des entrées utilisateur
+    // Fonction pour sécuriser les entrées utilisateur en supprimant les espaces et en échappant les caractères spéciaux
     function secureInput($data) {
-        return htmlspecialchars(trim($data));
+        return htmlspecialchars(trim($data));  
     }
 
-    // Récupération et sécurisation des données
+    // Récupération et sécurisation des données du formulaire
     $nom = secureInput($_POST['nom']) ? secureInput($_POST['nom']) : 'N/A';
     $prenom = secureInput($_POST['prenom']) ? secureInput($_POST['prenom']) : 'N/A';
     $password = secureInput($_POST['password']) ? secureInput($_POST['password']) : 'N/A';
@@ -26,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <title>Confirmation d'envoi</title>
     <link rel="stylesheet" href="style.css"/>
     <style>
-        /* Modern CSS Styling */
         body {
             background: linear-gradient(135deg, #1e3c72, #2a5298);
             font-family: 'Roboto', sans-serif;
@@ -142,6 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body>
   <div class="container">
         <div class="header">
+            <!-- "htmlspecialchars()" garantit que les caractères spéciaux ne seront pas interprétés comme du code HTML -->
             <h1>Merci d'avoir répondu, <?php echo htmlspecialchars($prenom) . " " . htmlspecialchars($nom); ?> !</h1>
         </div>
         <p class="recap">Veuillez tout de même vérifier les informations et confirmer votre envoi :</p>

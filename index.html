@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formulaire de Test - TP NSI</title>
+  <title>Formulaire</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="container">
-    <h2>Inscription au TP NSI</h2>
+    <h2>Inscription à un Formulaire</h2>
 
+    <!-- Formulaire qui envoie les données à "confirmation.php" via POST -->
     <form id="monFormulaire" action="confirmation.php" method="post">
 
       <!-- Section identité -->
@@ -66,17 +67,17 @@
     </form>
   </main>
 
+  <!-- Script pour gérer l'affichage/masquage du mot de passe -->
   <script>
-    // Gestion de l'affichage et du masquage du mot de passe
-    const passwordInput = document.getElementById('password');
-    const togglePasswordButton = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password'); // Champ mot de passe
+    const togglePasswordButton = document.getElementById('togglePassword'); // Bouton pour afficher/masquer
 
     togglePasswordButton.addEventListener('click', () => {
       if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
+        passwordInput.type = 'text'; // Affiche le texte
         togglePasswordButton.textContent = 'Cacher';
       } else {
-        passwordInput.type = 'password';
+        passwordInput.type = 'password'; // Cache le texte
         togglePasswordButton.textContent = 'Afficher';
       }
     });
