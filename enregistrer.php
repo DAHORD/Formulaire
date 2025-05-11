@@ -5,7 +5,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $dataEntry = [
         "nom"       => isset($_POST["nom"]) ? $_POST["nom"] : 'N/A',
         "prenom"    => isset($_POST["prenom"]) ? $_POST["prenom"] : 'N/A',
-        "password"  => isset($_POST["password"]) ? $_POST["password"] : 'N/A',
         "like"      => isset($_POST["like"]) ? $_POST["like"] : 'N/A',
         "presence"  => isset($_POST['presence']) ? 'Oui' : 'Non',
         "prefere"   => isset($_POST["prefere"]) ? $_POST["prefere"] : 'N/A',

@@ -1,20 +1,10 @@
 [
     {
-        "nom": "rr",
-        "prenom": "rr",
-        "password": "rr",
+        "nom": "eee",
+        "prenom": "ee",
         "like": "Oui",
         "presence": "Oui",
-        "prefere": "Math",
-        "date": "2025-05-11 02:12:14"
-    },
-    {
-        "nom": "ff",
-        "prenom": "ff",
-        "password": "ff",
-        "like": "Oui",
-        "presence": "Oui",
-        "prefere": "Math",
-        "date": "2025-05-11 02:22:16"
+        "prefere": "NSI",
+        "date": "2025-05-11 14:13:09"
     }
 ]
