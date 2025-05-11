@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $dataEntry = [
         "nom"       => secureInput($_POST['nom']) ? secureInput($_POST['nom']) : 'N/A',
         "prenom"    => secureInput($_POST['prenom']) ? secureInput($_POST['prenom']) : 'N/A',
-        "password"  => secureInput($_POST['password']) ? secureInput($_POST['password']) : 'N/A',
         "like"      => secureInput($_POST['like']) ? secureInput($_POST['like']) : 'N/A',
         "presence"  => secureInput($_POST['presence']) ? 'Oui' : 'Non',
         "prefere"   => secureInput($_POST['prefere']) ? secureInput($_POST['prefere']) : 'N/A',
