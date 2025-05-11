@@ -9,9 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Récupération et sécurisation des données du formulaire
     $nom = secureInput($_POST['nom']) ? secureInput($_POST['nom']) : 'N/A';
     $prenom = secureInput($_POST['prenom']) ? secureInput($_POST['prenom']) : 'N/A';
-    $password = secureInput($_POST['password']) ? secureInput($_POST['password']) : 'N/A';
     $like = secureInput($_POST['like']) ? secureInput($_POST['like']) : 'N/A';
-    $presence = secureInput($_POST['presence']) ? 'Oui' : 'Non';
+    $presence = isset($_POST['presence']) ? 'Oui' : 'Non';
     $prefere = secureInput($_POST['prefere']) ? secureInput($_POST['prefere']) : 'N/A';
 } else {
     // Si la page est accédée directement sans données, rediriger vers le formulaire

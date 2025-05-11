@@ -147,6 +147,10 @@ select:focus {
   color: #555; 
 }
 
+input[type="checkbox"] {
+  margin-right: 10px; /* Espacement à droite */
+}
+
 /* Conteneur pour les boutons */
 .buttons {
   display: flex;
