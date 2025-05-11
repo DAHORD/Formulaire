@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+  background: #f9fafb;
+  color: #111827;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 640px;
+  margin: 60px auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+h2 {
+  text-align: center;
+  color: #1d4ed8;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  font-weight: 600;
+  color: #111827;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background-color: #ffffff;
+  transition: border 0.3s ease;
+  font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+.radio-group {
+  p {
+    font-weight: 600;
+  }
+}
+
+.radio-group,
+.checkbox-group {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.radio-group label,
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: normal;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: #3b82f6;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  flex: 1;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"] {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+input[type="submit"]:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+input[type="reset"] {
+  background-color: #9ca3af;
+  color: #ffffff;
+}
+
+input[type="reset"]:hover {
+  background-color: #6b7280;
+  transform: translateY(-2px);
+}
+
+a {
+  color: #1d4ed8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #3b82f6;
+}
+
+p {
+  margin: 20px 0 0;
+}
+
+strong {
+  color: #1d4ed8;
+}

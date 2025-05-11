@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulaire de Test - TP NSI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h2>Inscription au TP NSI</h2>
+
+    <form id="monFormulaire" action="confirmation.php" method="post">
+
+      <!-- Section identité -->
+      <section>
+        <label for="prenom">Nom :</label>
+        <input type="text" id="nom" name="nom" required autofocus />
+
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required />
+
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required />
+      </section>
+
+      <!-- Section NSI -->
+      <section>
+        <div class="radio-group">
+          <p>Aimes-tu la NSI ?</p>
+          <label for="like_oui">
+            <input type="radio" id="like_oui" name="like" value="Oui" />
+            Oui
+          </label>
+          <label for="like_non">
+            <input type="radio" id="like_non" name="like" value="Non" />
+            Non
+          </label>
+        </div>
+      </section>
+
+      <!-- Section présence -->
+      <section class="checkbox-group">
+        <label for="presence">
+          <input type="checkbox" id="presence" name="presence" checked />
+          <span id="presenceLabel">Je serai présent(e) à la prochaine réunion</span>
+        </label>
+      </section>
+
+      <!-- Section matière préférée -->
+      <section>
+        <label for="prefere">Quelle est votre matière préférée ?</label>
+        <select name="prefere" id="prefere">
+          <option value="Math">Mathématiques</option>
+          <option value="NSI">NSI</option>
+          <option value="Francais">Français</option>
+        </select>
+      </section>
+
+      <!-- Boutons -->
+      <div class="buttons">
+        <input type="reset" class="reset" value="Réinitialiser" />
+        <input type="submit" value="Valider" />
+      </div>
+    </form>
+  </main>
+
+  <script>
+    // Mise à jour dynamique de l'étiquette de présence
+    const presenceCheckbox = document.getElementById('presence');
+    const presenceLabel = document.getElementById('presenceLabel');
+
+    presenceCheckbox.addEventListener('change', () => {
+      presenceLabel.textContent = presenceCheckbox.checked
+        ? "Je serai présent(e) à la prochaine réunion"
+        : "Je ne serai pas présent(e) à la prochaine réunion";
+    });
+  </script>
+</body>
+</html>
