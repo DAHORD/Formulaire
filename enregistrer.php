@@ -1,13 +1,18 @@
 <?php
 // enregistrer.php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Fonction de sécurisation des entrées utilisateur
+    function secureInput($data) {
+        return htmlspecialchars(trim($data));
+    }
     // Constitution d'un tableau associatif avec les données
     $dataEntry = [
-        "nom"       => isset($_POST["nom"]) ? $_POST["nom"] : 'N/A',
-        "prenom"    => isset($_POST["prenom"]) ? $_POST["prenom"] : 'N/A',
-        "like"      => isset($_POST["like"]) ? $_POST["like"] : 'N/A',
-        "presence"  => isset($_POST['presence']) ? 'Oui' : 'Non',
-        "prefere"   => isset($_POST["prefere"]) ? $_POST["prefere"] : 'N/A',
+        "nom"       => secureInput($_POST['nom']) ? secureInput($_POST['nom']) : 'N/A',
+        "prenom"    => secureInput($_POST['prenom']) ? secureInput($_POST['prenom']) : 'N/A',
+        "password"  => secureInput($_POST['password']) ? secureInput($_POST['password']) : 'N/A',
+        "like"      => secureInput($_POST['like']) ? secureInput($_POST['like']) : 'N/A',
+        "presence"  => secureInput($_POST['presence']) ? 'Oui' : 'Non',
+        "prefere"   => secureInput($_POST['prefere']) ? secureInput($_POST['prefere']) : 'N/A',
         "date"      => date("Y-m-d H:i:s"),
     ];
 

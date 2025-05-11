@@ -7,12 +7,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     // Récupération et sécurisation des données
-    $nom = isset($_POST['nom']) ? secureInput($_POST['nom']) : 'N/A';
-    $prenom = isset($_POST['prenom']) ? secureInput($_POST['prenom']) : 'N/A';
-    $password = isset($_POST['password']) ? secureInput($_POST['password']) : 'N/A';
-    $like = isset($_POST['like']) ? secureInput($_POST['like']) : 'N/A';
-    $presence = isset($_POST['presence']) ? 'Oui' : 'Non';
-    $prefere = isset($_POST['prefere']) ? secureInput($_POST['prefere']) : 'N/A';
+    $nom = secureInput($_POST['nom']) ? secureInput($_POST['nom']) : 'N/A';
+    $prenom = secureInput($_POST['prenom']) ? secureInput($_POST['prenom']) : 'N/A';
+    $password = secureInput($_POST['password']) ? secureInput($_POST['password']) : 'N/A';
+    $like = secureInput($_POST['like']) ? secureInput($_POST['like']) : 'N/A';
+    $presence = secureInput($_POST['presence']) ? 'Oui' : 'Non';
+    $prefere = secureInput($_POST['prefere']) ? secureInput($_POST['prefere']) : 'N/A';
 } else {
     // Si la page est accédée directement sans données, rediriger vers le formulaire
     header("Location: index.html");
@@ -71,9 +71,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             padding: 10px 0;
             border-bottom: 1px solid #eee;
             transition: background 0.3s ease;
-            label {
-              width: 200px;
-            }
         }
 
         .info-section:last-of-type {
@@ -84,16 +81,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             background: #f7f7f7;
         }
 
-        .label {
-            font-weight: 600;
-            color: #555;
-            flex: 1;
+        label {
+          display: inline-block; 
+          width: auto; 
+          white-space: nowrap; 
+          font-size: 16px; 
+          margin: 5px;
+        }
+        
+        .label { 
+          margin-left: 30px;
+          font-weight: 600;
+          color: #555;
         }
 
         .value {
             flex: 2;
             text-align: right;
-            color: #333;
+            margin-right: 30px;
+            color: #000;
         }
 
         .submit-container {
