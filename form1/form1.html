@@ -81,6 +81,18 @@
         togglePasswordButton.textContent = 'Afficher';
       }
     });
+
+    // Gestion de la mise à jour du texte pour la checkbox
+    const presenceCheckbox = document.getElementById('presence'); // Checkbox
+    const presenceLabel = document.getElementById('presenceLabel'); // Texte associé
+
+    presenceCheckbox.addEventListener('change', () => {
+      if (presenceCheckbox.checked) {
+        presenceLabel.textContent = "Je serai présent(e) à la prochaine réunion.";
+      } else {
+        presenceLabel.textContent = "Je ne serai pas présent(e) à la prochaine réunion.";
+      }
+    });
   </script>
 </body>
 </html>
