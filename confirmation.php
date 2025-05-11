@@ -26,117 +26,132 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <title>Confirmation d'envoi</title>
     <link rel="stylesheet" href="style.css"/>
     <style>
-        body {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: #fff;
-        }
+    /* Applique un dégradé de fond à la page et centre le contenu */
+    body {
+        background: linear-gradient(135deg, #1e3c72, #2a5298); /* Dégradé bleu */
+        font-family: 'Roboto', sans-serif; /* Police moderne et lisible */
+        margin: 0;
+        padding: 0;
+        display: flex; /* Permet de centrer le contenu */
+        justify-content: center; /* Centre horizontalement */
+        align-items: center; /* Centre verticalement */
+        min-height: 100vh; /* Hauteur minimale de la page */
+        color: #fff; /* Texte blanc */
+    }
 
-        .container {
-            background: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            width: 90%;
-            max-width: 600px;
-            padding: 40px;
-            overflow: hidden;
-            color: #333;
-        }
+    /* Style du conteneur principal */
+    .container {
+        background: #ffffff; /* Fond blanc */
+        border-radius: 16px; /* Coins arrondis */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de profondeur */
+        width: 90%; /* Largeur relative à l'écran */
+        max-width: 600px; /* Largeur maximale */
+        padding: 40px; /* Espacement interne */
+        overflow: hidden; /* Cache le contenu débordant */
+        color: #333; /* Couleur du texte */
+    }
 
-        .header h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #1e3c72;
-            text-align: center;
-        }
+    /* Style de l'en-tête */
+    .header h1 {
+        font-size: 28px; /* Taille de la police */
+        margin-bottom: 10px; /* Espacement en bas */
+        color: #1e3c72; /* Couleur bleue */
+        text-align: center; /* Centrage du texte */
+    }
 
-        .recap {
-            font-size: 18px;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #555;
-        }
+    /* Style du texte récapitulatif */
+    .recap {
+        font-size: 18px; /* Taille de la police */
+        margin-bottom: 20px; /* Espacement en bas */
+        text-align: center; /* Centrage du texte */
+        color: #555; /* Couleur grise */
+    }
 
-        .info-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-            transition: background 0.3s ease;
-        }
+    /* Style des sections d'information */
+    .info-section {
+        display: flex; /* Disposition en ligne */
+        justify-content: space-between; /* Espacement entre les éléments */
+        align-items: center; /* Alignement vertical */
+        padding: 10px 0; /* Espacement interne vertical */
+        border-bottom: 1px solid #eee; /* Ligne de séparation */
+        transition: background 0.3s ease; /* Transition pour l'effet au survol */
+    }
 
-        .info-section:last-of-type {
-            border-bottom: none;
-        }
+    /* Supprime la bordure pour la dernière section */
+    .info-section:last-of-type {
+        border-bottom: none;
+    }
 
-        .info-section:hover {
-            background: #f7f7f7;
-        }
+    /* Change le fond au survol */
+    .info-section:hover {
+        background: #f7f7f7; /* Fond gris clair */
+    }
 
-        label {
-          display: inline-block; 
-          width: auto; 
-          white-space: nowrap; 
-          font-size: 16px; 
-          margin: 5px;
-        }
-        
-        .label { 
-          margin-left: 30px;
-          font-weight: 600;
-          color: #555;
-        }
+    /* Style des étiquettes */
+    label {
+        display: inline-block; /* Affichage en ligne */
+        width: auto; /* Largeur automatique */
+        white-space: nowrap; /* Empêche le retour à la ligne */
+        font-size: 16px; /* Taille de la police */
+        margin: 5px; /* Espacement autour */
+    }
 
-        .value {
-            flex: 2;
-            text-align: right;
-            margin-right: 30px;
-            color: #000;
-        }
+    /* Style des étiquettes dans les sections */
+    .label {
+        margin-left: 30px; /* Décalage à gauche */
+        font-weight: 600; /* Texte en gras */
+        color: #555; /* Couleur grise */
+    }
 
-        .submit-container {
-            text-align: center;
-            margin-top: 30px;
-        }
+    /* Style des valeurs affichées */
+    .value {
+        flex: 2; /* Prend plus d'espace dans le conteneur flex */
+        text-align: right; /* Alignement à droite */
+        margin-right: 30px; /* Décalage à droite */
+        color: #000; /* Texte noir */
+    }
 
-        .submit-btn {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 24px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+    /* Conteneur pour le bouton de soumission */
+    .submit-container {
+        text-align: center; /* Centrage du contenu */
+        margin-top: 30px; /* Espacement en haut */
+    }
 
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
+    /* Style du bouton de soumission */
+    .submit-btn {
+        background: linear-gradient(135deg, #1e3c72, #2a5298); /* Dégradé bleu */
+        color: #fff; /* Texte blanc */
+        border: none; /* Pas de bordure */
+        border-radius: 8px; /* Coins arrondis */
+        padding: 12px 24px; /* Espacement interne */
+        font-size: 16px; /* Taille de la police */
+        font-weight: 600; /* Texte en gras */
+        cursor: pointer; /* Curseur en forme de main */
+        transition: all 0.3s ease; /* Transition pour les effets */
+    }
 
-        #togglePassword {
-            background: none;
-            border: none;
-            color: #1e3c72;
-            font-size: 14px;
-            cursor: pointer;
-            margin-left: 10px;
-        }
+    /* Effet au survol du bouton */
+    .submit-btn:hover {
+        transform: translateY(-3px); /* Déplace légèrement vers le haut */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de profondeur */
+    }
 
-        #togglePassword:hover {
-            color: #2a5298;
-            text-decoration: underline;
-        }
-    </style>
+    /* Style du bouton pour afficher/masquer le mot de passe */
+    #togglePassword {
+        background: none; /* Pas de fond */
+        border: none; /* Pas de bordure */
+        color: #1e3c72; /* Couleur bleue */
+        font-size: 14px; /* Taille de la police */
+        cursor: pointer; /* Curseur en forme de main */
+        margin-left: 10px; /* Décalage à gauche */
+    }
+
+    /* Effet au survol du bouton togglePassword */
+    #togglePassword:hover {
+        color: #2a5298; /* Couleur bleue plus claire */
+        text-decoration: underline; /* Soulignement */
+    }
+</style>
 </head>
 <body>
   <div class="container">
