@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <head>
     <meta charset="UTF-8">
     <title>Confirmation d'envoi</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="./style2.css"/>
     <style>
     /* Applique un dégradé de fond à la page et centre le contenu */
     body {
@@ -188,7 +188,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
 
   <div class="submit-container">
-    <form action="enregistrer.php" method="post">
+    <form action="./enregistrer.php" method="post">
       <input type="hidden" name="nom" value="<?php echo htmlspecialchars($nom); ?>">
       <input type="hidden" name="prenom" value="<?php echo htmlspecialchars($prenom); ?>">
       <input type="hidden" name="like" value="<?php echo htmlspecialchars($like); ?>">
