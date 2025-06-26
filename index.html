@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulaire</title>
+  <link rel="stylesheet" href="./style/style2.css" />
+</head>
+<body>
+  <main class="container">
+    <h2>Inscription à un Formulaire</h2>
+
+    <!-- Formulaire qui envoie les données à "confirmation.php" via POST -->
+    <form id="monFormulaire" action="./php/confirmation.php" method="post">
+
+      <!-- Section identité -->
+      <section>
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required autofocus />
+
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required />
+
+        <label for="password">Mot de passe :</label>
+        <div class="password-container">
+          <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required />
+          <button type="button" id="togglePassword">Afficher</button>
+        </div>
+      </section>
+
+      <!-- Section NSI -->
+      <section class="radio-group">
+        <p>Aimes-tu la NSI ?</p>
+        <div class="radio-group-inner">
+          <label for="like_oui">
+            <input type="radio" id="like_oui" name="like" value="Oui" /> Oui
+          </label>
+          <label for="like_non">
+            <input type="radio" id="like_non" name="like" value="Non" /> Non
+          </label>
+        </div>
+      </section>
+
+      <!-- Section présence -->
+      <section class="checkbox-group">
+        <label for="presence">
+          <input type="checkbox" id="presence" name="presence" checked />
+          <span id="presenceLabel">Je serai présent(e) à la prochaine réunion</span>
+        </label>
+      </section>
+
+      <!-- Section matière préférée -->
+      <section>
+        <label for="prefere">Quelle est votre matière préférée ?</label>
+        <select name="prefere" id="prefere">
+          <option value="Math">Mathématiques</option>
+          <option value="NSI">NSI</option>
+          <option value="Francais">Français</option>
+        </select>
+      </section>
+
+      <!-- Boutons -->
+      <div class="buttons">
+        <input type="reset" class="reset" value="Réinitialiser" />
+        <input type="submit" value="Valider" />
+      </div>
+    </form>
+  </main>
+
+  <!-- Script pour gérer l'affichage/masquage du mot de passe -->
+  <script>
+    const passwordInput = document.getElementById('password'); // Champ mot de passe
+    const togglePasswordButton = document.getElementById('togglePassword'); // Bouton pour afficher/masquer
+
+    togglePasswordButton.addEventListener('click', () => {
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text'; // Affiche le texte
+        togglePasswordButton.textContent = 'Cacher';
+      } else {
+        passwordInput.type = 'password'; // Cache le texte
+        togglePasswordButton.textContent = 'Afficher';
+      }
+    });
+
+    // Gestion de la mise à jour du texte pour la checkbox de présence à la réunion
+    const presenceCheckbox = document.getElementById('presence'); // Checkbox
+    const presenceLabel = document.getElementById('presenceLabel'); // Texte associé
+    
+    // Lorsque l'utilisateur coche ou décoche la case, le texte associé change
+    presenceCheckbox.addEventListener('change', () => {
+      if (presenceCheckbox.checked) {
+        presenceLabel.textContent = "Je serai présent(e) à la prochaine réunion.";
+      } else {
+      presenceLabel.textContent = "Je ne serai pas présent(e) à la prochaine réunion.";
+      }
+    });
+  </script>
+</body>
+</html>

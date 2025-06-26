@@ -1,0 +1,288 @@
+
+/* ------------------------------------------------------------------------
+   CSS Surcommenté pour se rappeler de ce que fait chaque carcactéristique
+   ------------------------------------------------------------------------*/
+
+
+/* Réinitialisation des marges, des paddings et du box-sizing pour tous les éléments */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style global pour le corps de la page */
+body {
+  font-family: 'Roboto', Arial, sans-serif; 
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+  min-height: 100vh; /* Hauteur minimale pour couvrir l'écran */
+  display: flex; /* Centrage du contenu */
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Espacement autour du contenu */
+}
+
+/* Conteneur principal de la page */
+.container {
+  background: #ffffff; 
+  border-radius: 16px; 
+  padding: 40px; /* Espacement interne */
+  max-width: 600px; /* Largeur maximale */
+  width: 100%; /* Largeur responsive */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre */
+  color: #333; 
+}
+
+/* Style pour les titres dans le conteneur */
+.container h2 {
+  text-align: center; /* Centrage du texte */
+  font-size: 28px; 
+  color: #1e3c72; 
+  margin-bottom: 20px; /* Espacement en bas */
+}
+
+/* Style global pour les formulaires */
+form {
+  display: flex; /* Flexbox pour organiser les éléments */
+  flex-direction: column; /* Organisation verticale */
+  gap: 20px; /* Espacement entre les éléments */
+}
+
+/* Style pour les sections dans les formulaires */
+form section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Espacement entre les sections */
+section {
+  margin-bottom: 15px;
+}
+
+/* Style pour les labels */
+label {
+  font-weight: 600; /* Texte en gras */
+  color: #555; 
+  p {
+    color: #333; 
+  }
+}
+
+/* Style pour les placeholders des champs de saisie */
+input::placeholder {
+  color: #aaa; /* Couleur du placeholder */
+  font-style: italic; /* Texte en italique */
+  font-size: 14px; 
+  transition: color 0.3s ease-in-out; /* Transition pour le changement de couleur */
+}
+
+/* Couleur du placeholder lorsqu'un champ est focus */
+input:focus::placeholder {
+  color: #ccc;
+}
+
+/* Style pour les champs de texte, mot de passe et les sélecteurs */
+input[type="text"],
+input[type="password"],
+select {
+  padding: 10px; /* Espacement interne */
+  border: 1px solid #ddd; /* Bordure grise de 1px */
+  border-radius: 8px; 
+  font-size: 16px; 
+  max-width: 450px; /* Largeur maximale */
+  margin-left: 10px; /* Espacement à gauche */
+  width: 100%; /* Largeur responsive */
+  outline: none; /* Suppression de l'effet de focus par défaut */
+  transition: border-color 0.3s ease; /* Transition pour la couleur de la bordure */
+}
+
+/* Couleur de la bordure lorsqu'un champ est focus */
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus {
+  border-color: #1e3c72; 
+}
+
+/* Groupe de boutons radio */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center; /* Centrage horizontal */
+  p {
+    font-weight: 600; /* Texte en gras */
+  }
+}
+
+/* Conteneur interne pour les boutons radio */
+.radio-group-inner {
+  display: flex;
+  gap: 20px; /* Espacement entre les boutons */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style pour les labels des boutons radio */
+.radio-group-inner label {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Espacement entre le bouton et le texte */
+}
+
+/* Groupe de cases à cocher */
+.checkbox-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Espacement entre les cases */
+}
+
+/* Style pour les labels des cases à cocher */
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  font-weight: 600; /* Texte en gras */
+  color: #555; 
+}
+
+input[type="checkbox"] {
+  margin-right: 10px; /* Espacement à droite */
+}
+
+/* Conteneur pour les boutons */
+.buttons {
+  display: flex;
+  justify-content: space-between; /* Espacement entre les boutons */
+}
+
+/* Style pour les boutons de réinitialisation et de soumission */
+input[type="reset"],
+input[type="submit"] {
+  padding: 12px 24px; /* Espacement interne */
+  border: none; /* Suppression des bordures */
+  border-radius: 8px; 
+  font-size: 16px;
+  font-weight: 600; /* Texte en gras */
+  cursor: pointer; 
+  color: #fff; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour les effets */
+}
+
+/* Style spécifique pour le bouton de réinitialisation */
+input[type="reset"] {
+  background: #f44336; 
+}
+
+/* Effet hover pour le bouton de réinitialisation */
+input[type="reset"]:hover {
+  transform: translateY(-3px); /* Légère élévation */
+  box-shadow: 0 8px 16px rgba(244, 67, 54, 0.2); /* Ombre */
+}
+
+/* Style spécifique pour le bouton de soumission */
+input[type="submit"] {
+  background: linear-gradient(135deg, #1e3c72, #2a5298); 
+}
+
+/* Effet hover pour le bouton de soumission */
+input[type="submit"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(30, 60, 114, 0.2); /* Ombre */
+}
+
+/* Style pour le champ de mot de passe */
+input[type="password"] {
+  width: 100%; /* Largeur réduite pour inclure le bouton "Afficher/Cacher" */
+  max-width: 460px; /* Largeur maximale */
+  margin-left: 10px; /* Espacement à gauche */
+  display: inline-block;
+}
+
+/* Bouton pour afficher/cacher le mot de passe */
+#togglePassword {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #1e3c72;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Effet hover pour le bouton "Afficher/Cacher" */
+#togglePassword:hover {
+  color: #2a5298; 
+  text-decoration: underline; /* Soulignement */
+  text-decoration-color: #2a5298; /* Couleur du soulignement */
+  text-underline-offset: 2px;
+}
+
+/* Conteneur pour le champ de mot de passe et le bouton */
+.password-container {
+  display: flex;
+  align-items: center; /* Alignement vertical */
+  justify-content: space-between;
+  width: 100%; /* Largeur alignée avec les autres champs */
+  max-width: 460px; /* Largeur maximale */
+  position: relative;
+}
+
+/* Style pour le champ de mot de passe dans le conteneur */
+.password-container input {
+  flex: 1; /* Prend tout l'espace disponible */
+  padding-right: 40px; /* Espacement pour éviter le chevauchement avec le bouton */
+  width: 100%; /* Largeur alignée avec les autres champs */
+  max-width: 460px; /* Largeur maximale */
+}
+
+/* Style pour le bouton dans le conteneur */
+.password-container button {
+  position: absolute; /* Positionnement absolu pour placer le bouton par rapport au conteneur parent */
+  top: 50%; /* Aligne verticalement le bouton au centre du conteneur */
+  margin-right: 15px; /* Ajoute un espacement à droite */
+  transform: translateY(-50%); /* Ajuste la position verticale pour centrer parfaitement le bouton */
+  background: none; /* Supprime l'arrière-plan par défaut du bouton */
+  border: none; /* Supprime la bordure par défaut du bouton */
+  color: #1e3c72;
+  font-size: 14px; 
+  cursor: pointer; 
+  padding: 0; /* Supprime tout espacement interne du bouton */
+  transition: color 0.3s ease; /* Transition pour la couleur */
+}
+
+/* Effet hover pour le bouton dans le conteneur */
+.password-container button:hover {
+  color: #2a5298;
+}
+
+/* Style pour les liens */
+a {
+  color: #1e3c72; 
+  text-decoration: none; /* Suppression du soulignement */
+  font-weight: 600; /* Texte en gras */
+  transition: color 0.3s ease; /* Transition pour la couleur */
+}
+
+/* Effet hover pour les liens */
+a:hover {
+  color: #2a5298;
+  text-decoration: underline;
+  text-underline-offset: 4px; /* Décalage du soulignement */
+}
+
+/* Style pour les paragraphes */
+p {
+  line-height: 1.5; /* Hauteur de ligne */
+  font-size: 18px; 
+  text-align: center; /* Centrage du texte */
+  margin-bottom: 10px; /* Espacement en bas */
+}
+
+/* Suppression de l'espacement pour le dernier paragraphe */
+p:last-child {
+  margin-bottom: 0;
+}
